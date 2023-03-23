@@ -318,7 +318,9 @@ def ADL():
     adl_dilim["Dönem"] = input_text
     adl_dilim.reset_index()
     
-    return st.dataframe(adl_dilim)
+    return adl_dilim.to_excel()
 
-st.button("ADL Hazırla :rocket:", on_click = ADL)
-st.download_button("ADL İndir :rocket:", on_click = ADL)
+dilimler = ADL()
+
+#st.button("ADL Hazırla :rocket:", on_click = ADL)
+st.download_button(label = "ADL İndir :rocket:", on_click = ADL, file_name = "Dilim.xlsx")
