@@ -318,10 +318,5 @@ def ADL():
     adl_dilim["Dönem"] = input_text
   
     return adl_dilim
-df = ADL().to_excel("alper.xlsx")
-st.download_button(
-    label="Download data as CSV",
-    data=df,
-    file_name='large_df.xlsx',
-    mime='xlsx/csv',
-)
+df = ADL()
+print(df)
