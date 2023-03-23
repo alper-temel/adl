@@ -315,6 +315,6 @@ def ADL():
     adl_dilim = pd.concat([otomobil_adl, suv_adl, kamyonet_adl], axis = 0)
     adl_dilim["Dönem"] = input_text
     
-    return adl_dilim
+    return st.dataframe(adl_dilim)
 
 st.button("ADL Hazırla :rocket:", on_click = ADL)  
