@@ -320,4 +320,4 @@ def ADL():
     return st.dataframe(adl_dilim)
 
 veri = st.button(label = "ADL Hazırla", on_click = ADL)
-st.download_button(label = "ADL İndir :rocket:", file_name = "Dilim.xlsx", data = veri)
+st.download_button(label = "ADL İndir :rocket:", data = veri)
