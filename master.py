@@ -320,4 +320,4 @@ def ADL():
     return st.dataframe(adl_dilim)
 
 veri = st.button(label = "ADL Hazırla", on_click = ADL)
-indir = st.download_button(label = "ADL İndir :rocket:", data = veri)
+indir = st.download_button(label = "ADL İndir :rocket:", data = pd.DataFrame())
