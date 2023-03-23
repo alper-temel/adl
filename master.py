@@ -321,8 +321,8 @@ def ADL():
     return adl_dilim
 
  def convert_df(df):
-    return df.to_excel().encode('utf-8') 
+    return df.to_excel()
   
   
-dilimler = convert_df(adl_dilim)
+dilimler = convert_df(ADL())
 st.download_button(label = "ADL İndir :rocket:", data = dilimler, file_name = "Dilim.xlsx")
