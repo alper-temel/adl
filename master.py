@@ -320,4 +320,4 @@ def ADL():
     return adl_dilim
 
 
-indir = st.download_button(label = "ADL İndir :rocket:", file_name = "dilim.xlsx", mime = "text/csv")
+indir = st.download_button(label = "ADL İndir :rocket:", file_name = "dilim.xlsx", mime = "text/csv", data = " ")
