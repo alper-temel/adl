@@ -317,7 +317,7 @@ def ADL():
     adl_dilim = pd.concat([otomobil_adl, suv_adl, kamyonet_adl], axis = 0)
     adl_dilim["Dönem"] = input_text
   
-    return st.dataframe(adl_dilim)
+    return adl_dilim
 
 
 st.download_button(label = "ADL İndir :rocket:", data = ADL(), file_name = "Dilim.xlsx")
