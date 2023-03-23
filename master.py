@@ -318,5 +318,5 @@ def ADL():
     adl_dilim["Dönem"] = input_text
   
     return adl_dilim
-df = ADL()
-print(df)
+  
+buton = st.button(label = "ADL Hazırla", on_click = ADL)
