@@ -22,7 +22,7 @@ def ADL():
      if uploaded_excel is not None:
           uploaded_excel.seek(0)
           data = pd.read_excel(uploaded_excel, header = 1)
-      if kullanım_tarzı is not None:
+     if kullanım_tarzı is not None:
           kullanim_tarzi.seek(0)
           kullanım_tarzı = pd.read_csv(kullanim_tarzi)
     
