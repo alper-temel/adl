@@ -10,7 +10,7 @@ import numpy as np
 import streamlit as st
 
 
-kullanim_tarzi = st.file_uploader("Kullanım Tarzı Dosyasını Yükleyin ", type = ["xlsx", "csv"])
+kullanim_tarzi = st.file_uploader("Kullanım Tarzı Dosyasını Yükleyin ", type = ["xls", "xlsx", "csv"])
 if kullanim_tarzi is not None:
      st.dataframe(pd.read_excel(kullanim_tarzi))
 else:
@@ -19,7 +19,7 @@ else:
 input_text = st.text_input("Dönemi Yazınız: ")
 st.write("Yazılacak Dönem, ", input_text)
 
-uploaded_excel = st.file_uploader(label = "**Dilimlenecek Excel Dosyasını Seçin** :knife:", type = ["csv", "xlsx"])
+uploaded_excel = st.file_uploader(label = "**Dilimlenecek Excel Dosyasını Seçin** :knife:", type = ["xls", "xlsx", "csv"])
 if uploaded_excel is not None:
      st.dataframe(pd.read_excel(uploaded_excel, header = 1))
 else:
