@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
+from io import BytesIO
+from pyxlsb import open_workbook as open_xlsb
 
 st.markdown("""
                 <style>
@@ -12,16 +14,27 @@ st.markdown("""
             """, 
             unsafe_allow_html = True)
 
-st.markdown("# :violet[ADL DİLİM ÇALIŞMASI] 	:car: :hocho:")
+st.markdown("""
+                <style>
+                    .css-cio0dv.egzxvld1
+                {
+                    visibility: hidden;
+                }
+                </style>
+            """, 
+            unsafe_allow_html = True)
 
-kullanim_tarzi = st.file_uploader("Kullanım Tarzı Dosyasını Yükleyin ", type = ["xls", "xlsx", "csv"])
+
+st.markdown("# :violet[ADL DİLİM MAKİNESİ] 	:car: :hocho:")
+
+input_text = st.text_input("**Dönemi Yazınız:** ")
+st.write("Mevcut Dönem:  ", input_text, )
+
+kullanim_tarzi = st.file_uploader("**Kullanım Tarzı Dosyasını Yükleyin** ", type = ["xls", "xlsx", "csv"])
 if kullanim_tarzi is not None:
      st.dataframe(pd.read_excel(kullanim_tarzi))
 else:
     st.caption("Lütfen Excel Dosyasını Kontrol Edin")
-
-input_text = st.text_input("Dönemi Yazınız: ")
-st.write("Yazılacak Dönem, ", input_text)
 
 uploaded_excel = st.file_uploader(label = "**Dilimlenecek Excel Dosyasını Seçin** :knife:", type = ["xls", "xlsx", "csv"])
 if uploaded_excel is not None:
@@ -318,6 +331,28 @@ def ADL():
     adl_dilim["Dönem"] = input_text
   
     return adl_dilim
-  
-buton = pd.DataFrame(st.button(label = "ADL Hazırla", on_click = ADL))
-indir = st.download_button(label = "İndir", data = buton.to_excel(), file_name = "alper.xlsx", mime = 'xlsx')
+
+if uploaded_excel is not None and kullanim_tarzi is not None:
+    df = ADL()
+
+    def to_excel(df):
+        output = BytesIO()
+        writer = pd.ExcelWriter(output, engine='xlsxwriter')
+        df.to_excel(writer, index=False, sheet_name='Sheet1')
+        workbook = writer.book
+        worksheet = writer.sheets['Sheet1']
+        format1 = workbook.add_format({'num_format': '0.00'}) 
+        worksheet.set_column('A:A', None, format1)  
+        writer.save()
+        processed_data = output.getvalue()
+        return processed_data
+
+    df_xlsx = to_excel(df)
+    st.download_button(label='📥 Dosyayı İndir',
+                       data=df_xlsx,
+                       file_name= 'Dilim_{}.xlsx'.format(input_text))
+
+else:
+    st.download_button(label = '📥 Dosyayı İndir', data = ' ')
+
+st.markdown("Dilimler v1.0 ~ pekiyi :robot_face: 2023")
