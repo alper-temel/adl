@@ -321,4 +321,4 @@ def ADL():
     return st.dataframe(adl_dilim)
 
 st.button("ADL Hazırla :rocket:", on_click = ADL)
-st.download_button("ADL İndir :rocket:, on_click = ADL)
+st.download_button("ADL İndir :rocket:", on_click = ADL)
