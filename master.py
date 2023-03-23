@@ -319,4 +319,4 @@ def ADL():
   
     return st.dataframe(adl_dilim)
 
-veri = st.download_button(label = "ADL Listesi Hazırla :rocket:", data = ADL.to_excel())
+veri = st.download_button(label = "ADL Listesi Hazırla :rocket:", data = ADL().to_excel())
