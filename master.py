@@ -29,7 +29,7 @@ if uploaded_excel is not None:
 else:
     st.caption("Lütfen Excel Dosyasını Kontrol Edin")
     
-@st.cache_data
+
 def ADL():
     if uploaded_excel is not None:
          uploaded_excel.seek(0)
