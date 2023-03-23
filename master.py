@@ -134,11 +134,6 @@ def ADL():
     data_final = pd.concat([data_2023, data_2022, data_2021, data_2020, data_2019, data_2018, data_2017, data_2016, 
                             data_2015, data_2014, data_2013, data_2012, data_2011, data_2010, data_2009], axis = 0)
     
-    #kullanım_tarzı = pd.read_excel('//10.148.122.39/bireyselteknik/Alper/Kasko/AraçDegerListesi/kullanim_tarzi.xlsx') # --> burasını çözmemiz lazım
-    """
-    kullanım_tarzı dosyasını github'a yükle oradan okumalı 
-    
-    """
     kullanım_tarzı = kullanım_tarzı.rename(columns = {'REF': 'MarkaTip_kodu'})
     kullanım_tarzı["Kullanım_Tarzı"] = kullanım_tarzı["KT"]
     kullanım_tarzı = kullanım_tarzı.iloc[:, 2:]
