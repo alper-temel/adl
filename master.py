@@ -320,6 +320,7 @@ def ADL():
     return st.dataframe(adl_dilim)
 dilim = ADL()
 
+@st.cache
 def convert_df(df):
    return df.to_excel()
   
