@@ -2,6 +2,18 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 
+st.markdown("""
+                <style>
+                    .css-h5rgaw.egzxvld1
+                {
+                    visibility: hidden;
+                }
+                </style>
+            """, 
+            unsafe_allow_html = True)
+
+st.markdown("# :violet[ADL DİLİM ÇALIŞMASI] 	:car: :hocho:")
+
 kullanim_tarzi = st.file_uploader("Kullanım Tarzı Dosyasını Yükleyin ", type = ["xls", "xlsx", "csv"])
 if kullanim_tarzi is not None:
      st.dataframe(pd.read_excel(kullanim_tarzi))
@@ -304,7 +316,9 @@ def ADL():
     
     adl_dilim = pd.concat([otomobil_adl, suv_adl, kamyonet_adl], axis = 0)
     adl_dilim["Dönem"] = input_text
+    adl_dilim.reset_index()
     
     return st.dataframe(adl_dilim)
 
-st.button("ADL Hazırla :rocket:", on_click = ADL)  
+st.button("ADL Hazırla :rocket:", on_click = ADL)
+st.download_button("ADL İndir :rocket:, on_click = ADL)
