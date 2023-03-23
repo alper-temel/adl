@@ -1,14 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar 22 17:06:12 2023
-
-@author: alper.temel
-"""
-
 import pandas as pd
 import numpy as np
 import streamlit as st
-
 
 kullanim_tarzi = st.file_uploader("Kullanım Tarzı Dosyasını Yükleyin ", type = ["xls", "xlsx", "csv"])
 if kullanim_tarzi is not None:
@@ -28,12 +20,12 @@ else:
 @st.cache
 def ADL():
      if uploaded_excel is not None:
-            uploaded_excel.seek(0)
-            data = pd.read_csv(uploaded_excel, header = 1)
-     
+          uploaded_excel.seek(0)
+          data = pd.read_excel(uploaded_excel, header = 1)
       if kullanım_tarzı is not None:
-            kullanim_tarzi.seek(0)
-            kullanım_tarzı = pd.read_csv(kullanim_tarzi)
+          kullanim_tarzi.seek(0)
+          kullanım_tarzı = pd.read_csv(kullanim_tarzi)
+    
     markakodu = data["MarkaKodu"]
     markakodu = list(map(str, markakodu))
     
