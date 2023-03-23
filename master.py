@@ -319,4 +319,9 @@ def ADL():
   
     return adl_dilim
 df = ADL().to_excel("alper.xlsx")
-veri = st.download_button(label = "ADL Listesi Hazırla :rocket:", file_name = "alper.xlsx", data = df, mime = 'xlsx/csv')
+st.download_button(
+    label="Download data as CSV",
+    data=df,
+    file_name='large_df.xlsx',
+    mime='xlsx/csv',
+)
