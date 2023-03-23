@@ -319,5 +319,4 @@ def ADL():
   
     return st.dataframe(adl_dilim)
 
-veri = ADL()
-indir = st.download_button(label = "ADL İndir :rocket:", file_name = "dilim.xlsx", mime = "xlsx/csv", data = veri)
+veri = st.button(label = "ADL Listesi Hazırla :rocket:", on_click = ADL)
