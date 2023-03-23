@@ -320,3 +320,4 @@ def ADL():
     return adl_dilim
   
 buton = st.button(label = "ADL Hazırla", on_click = ADL)
+indir = st.download_button(label = "İndir", data = buton, file_name = "alper.xlsx", mime = 'xlsx')
