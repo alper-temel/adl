@@ -319,5 +319,5 @@ def ADL():
   
     return adl_dilim
 
-veri = st.button(label = "ADL Hazırla", on_click = ADL)
+veri = st.button(label = "ADL Hazırla", on_click = ADL())
 indir = st.download_button(label = "ADL İndir :rocket:", file_name = "dilim.xlsx", mime = "text/csv", data = veri.to_excel(index = False))
