@@ -316,8 +316,7 @@ def ADL():
     
     adl_dilim = pd.concat([otomobil_adl, suv_adl, kamyonet_adl], axis = 0)
     adl_dilim["Dönem"] = input_text
-    adl_dilim.reset_index()
-    
+  
     return adl_dilim
 
 def convert_df(df):
