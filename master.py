@@ -318,10 +318,10 @@ def ADL():
     adl_dilim["Dönem"] = input_text
   
     return adl_dilim
+dilim = ADL()
 
 def convert_df(df):
    return df.to_excel()
   
-  
-dilimler = convert_df(ADL)
+dilimler = convert_df(dilim)
 st.download_button(label = "ADL İndir :rocket:", data = dilimler, file_name = "Dilim.xlsx")
