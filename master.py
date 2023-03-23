@@ -320,4 +320,4 @@ def ADL():
     return adl_dilim
 
 
-st.download_button(label = "ADL İndir :rocket:", on_click = ADL(), file_name = "Dilim.xlsx")
+st.download_button(label = "ADL İndir :rocket:", on_click = ADL, file_name = "Dilim.xlsx")
