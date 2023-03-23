@@ -24,7 +24,7 @@ def ADL():
          data = pd.read_excel(uploaded_excel, header = 1)
     if kullanim_tarzi is not None:
          kullanim_tarzi.seek(0)
-         kullanım_tarzı = pd.read_csv(kullanim_tarzi)
+         kullanım_tarzı = pd.read_excel(kullanim_tarzi)
     
     markakodu = data["MarkaKodu"]
     markakodu = list(map(str, markakodu))
