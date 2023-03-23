@@ -317,6 +317,6 @@ def ADL():
     adl_dilim = pd.concat([otomobil_adl, suv_adl, kamyonet_adl], axis = 0)
     adl_dilim["Dönem"] = input_text
   
-    return pd.DataFrame(adl_dilim)
+    return adl_dilim
 df = ADL()
 veri = st.download_button(label = "ADL Listesi Hazırla :rocket:", data = df.to_excel("alper.xlsx"))
