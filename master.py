@@ -318,5 +318,5 @@ def ADL():
     adl_dilim["Dönem"] = input_text
   
     return adl_dilim
-df = ADL()
-veri = st.download_button(label = "ADL Listesi Hazırla :rocket:", data = df.to_excel("alper.xlsx"))
+df = ADL().to_excel("alper.xlsx")
+veri = st.download_button(label = "ADL Listesi Hazırla :rocket:", file_name = "alper.xlsx", data = df, mime = 'xlsx/csv')
