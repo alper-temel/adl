@@ -355,4 +355,4 @@ if uploaded_excel is not None and kullanim_tarzi is not None:
 else:
     st.download_button(label = '📥 Dosyayı İndir', data = ' ')
 
-st.markdown("Dilimler v1.0 ~ pekiyi :robot_face: 2023")
+st.markdown("Dilimler v1.0 ~ CAT :robot_face: 2023")
