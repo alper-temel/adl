@@ -25,7 +25,7 @@ st.markdown("""
             unsafe_allow_html = True)
 
 
-st.markdown("# :violet[ADL DİLİM MAKİNESİ] 	:car: :hocho:")
+st.markdown("# :violet[ADL DİLİM MAKİNESİ] 	:car: :hocho: :cake:")
 
 input_text = st.text_input("**Dönemi Yazınız:** ")
 st.write("Mevcut Dönem:  ", input_text, )
