@@ -83,8 +83,8 @@ def ADL():
     yeni_data["marka_kodu"] = yeni_markakodu
     yeni_data["tip_kodu"] = tipkodu
     yeni_data["MarkaTip_kodu"] = yeni_data["marka_kodu"] + yeni_data["tip_kodu"]
-    yeni_data["marka_adı"] = data["MarkaAdı"]
-    yeni_data["tip_adı"] = data["TipAdı"]
+    yeni_data["marka_adı"] = data[data.columns[0]]
+    yeni_data["tip_adı"] = data[data.columns[1]]
     yeni_data = yeni_data.iloc[:, 2:]
     
     data_2023 = pd.concat([yeni_data,data[data.columns[4:][0]]], axis = 1)
