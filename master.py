@@ -51,10 +51,10 @@ def ADL():
          kullanim_tarzi.seek(0)
          kullanım_tarzı = pd.read_excel(kullanim_tarzi)
     
-    markakodu = data[data.columns[0]]
+    markakodu = data[data.columns[0]]  # marka kodu
     markakodu = list(map(str, markakodu))
     
-    tipkodu = data[data.columns[1]]
+    tipkodu = data[data.columns[1]]    # tip kodu
     tipkodu = list(map(str, tipkodu))
     
     yeni_markakodu = []
@@ -83,8 +83,8 @@ def ADL():
     yeni_data["marka_kodu"] = yeni_markakodu
     yeni_data["tip_kodu"] = tipkodu
     yeni_data["MarkaTip_kodu"] = yeni_data["marka_kodu"] + yeni_data["tip_kodu"]
-    yeni_data["marka_adı"] = data[data.columns[0]]
-    yeni_data["tip_adı"] = data[data.columns[1]]
+    yeni_data["marka_adı"] = data[data.columns[2]] # marka kodu
+    yeni_data["tip_adı"] = data[data.columns[3]]   # tip kodu
     yeni_data = yeni_data.iloc[:, 2:]
     
     data_2023 = pd.concat([yeni_data,data[data.columns[4:][0]]], axis = 1)
