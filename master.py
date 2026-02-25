@@ -100,7 +100,7 @@ def ADL():
     data_2012 = pd.concat([yeni_data,data[data.columns[4:][11]]], axis = 1)
     data_2011 = pd.concat([yeni_data,data[data.columns[4:][12]]], axis = 1)
     data_2010 = pd.concat([yeni_data,data[data.columns[4:][13]]], axis = 1)
-    data_2009 = pd.concat([yeni_data,data[data.columns[4:][14]]], axis = 1)
+    #data_2009 = pd.concat([yeni_data,data[data.columns[4:][14]]], axis = 1)
     
     data_2023 = data_2023.loc[data_2023[data.columns[4:][0]] != 0]
     data_2022 = data_2022.loc[data_2022[data.columns[4:][1]] != 0]
@@ -116,7 +116,7 @@ def ADL():
     data_2012 = data_2012.loc[data_2012[data.columns[4:][11]] != 0]
     data_2011 = data_2011.loc[data_2011[data.columns[4:][12]] != 0]
     data_2010 = data_2010.loc[data_2010[data.columns[4:][13]] != 0]
-    data_2009 = data_2009.loc[data_2009[data.columns[4:][14]] != 0]
+    #data_2009 = data_2009.loc[data_2009[data.columns[4:][14]] != 0]
     
     data_2023["ModelYıl"] = data.columns[4:][0]
     data_2022["ModelYıl"] = data.columns[4:][1]
@@ -132,7 +132,7 @@ def ADL():
     data_2012["ModelYıl"] = data.columns[4:][11]
     data_2011["ModelYıl"] = data.columns[4:][12]
     data_2010["ModelYıl"] = data.columns[4:][13]
-    data_2009["ModelYıl"] = data.columns[4:][14]
+    #data_2009["ModelYıl"] = data.columns[4:][14]
     
     data_2023 = data_2023.rename(columns = {data.columns[4:][0]: 'Bedel'})
     data_2022 = data_2022.rename(columns = {data.columns[4:][1]: 'Bedel'})
@@ -148,10 +148,10 @@ def ADL():
     data_2012 = data_2012.rename(columns = {data.columns[4:][11]: 'Bedel'})
     data_2011 = data_2011.rename(columns = {data.columns[4:][12]: 'Bedel'})
     data_2010 = data_2010.rename(columns = {data.columns[4:][13]: 'Bedel'})
-    data_2009 = data_2009.rename(columns = {data.columns[4:][14]: 'Bedel'})
+    #data_2009 = data_2009.rename(columns = {data.columns[4:][14]: 'Bedel'})
     
     data_final = pd.concat([data_2023, data_2022, data_2021, data_2020, data_2019, data_2018, data_2017, data_2016, 
-                            data_2015, data_2014, data_2013, data_2012, data_2011, data_2010, data_2009], axis = 0)
+                            data_2015, data_2014, data_2013, data_2012, data_2011, data_2010], axis = 0)
     
     kullanım_tarzı = kullanım_tarzı.rename(columns = {'REF': 'MarkaTip_kodu'})
     kullanım_tarzı["Kullanım_Tarzı"] = kullanım_tarzı["KT"]
